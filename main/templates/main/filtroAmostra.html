@@ -1,0 +1,110 @@
+{% extends 'main/inicio.html' %}
+
+
+
+
+    <main id="main"> 
+        {% block content %}
+        <section>
+            <h2>Filtro da entrada de amostra</h2>
+            {% if sucesso_delete %}
+                <script>
+                    alert("{{ sucesso_delete }}");
+                </script>
+                {% endif %}
+            <form method="post">
+                {% csrf_token %}
+                <div class="container">
+                    <fieldset>
+                        <div class="row">
+                            <section class="col">
+                                <label for="codigo_bq">Codigo BQ</label>
+                                <input type="number" id="codigo_bq" name="codigo_bq">
+                             
+                            </section>
+                            <section class="col">
+                                <label for="cliente">Cliente</label>
+                                <input type="text" id="cliente" name="cliente">
+                         
+                            </section>
+                            <section class="col">
+                                <label for="amostra">Amostra</label>
+                                <input type="text" id="amostra" name="amostra">
+                    
+                            </section>
+                            <section class="col">
+                                <label for="data_entrada">Data da entrada</label>
+                                <input type="date" id="data_entrada" name="data_entrada">
+                        
+                            </section>
+                        </div>
+                    </fieldset>
+                </div>
+                <div id="data-form">
+                <input type="submit" value="Filtrar">
+                </div>
+            </form>
+
+        </section>
+        <section>
+            {% if dados %}
+            <h2>Resultados da Consulta</h2>
+            <script>
+                function confirmarRemocao() {
+                    return confirm("Tem certeza de que deseja remover este dado?");
+                }
+                </script>
+                
+
+            <table class="filter">
+                <thead>
+                  <tr>
+                    <th>Código BQ</th>
+                    <th>Data Coleta</th>
+                    <th>Data Entrada</th>
+                    <th>Cliente</th>
+                    <th>Código da Amostra</th>
+                    <th>Amostra</th>
+                    <th>Peso</th>
+                    <th>Temperatura</th>
+                    <th>Classificação</th>
+                    <th>Observação</th>
+                    <th>Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for dado in dados %}
+                  <tr>
+                    <td>{{ dado.codigo_bq }}</td>
+                    <td>{{ dado.data_coleta }}</td>
+                    <td>{{ dado.data_entrada }}</td>
+                    <td>{{ dado.cliente }}</td>
+                    <td>{{ dado.codigo_amostra }}</td>
+                    <td>{{ dado.amostra }}</td>
+                    <td>{{ dado.peso }}</td>
+                    <td>{{ dado.temperatura }}</td>
+                    <td>{{ dado.classificacao }}</td>
+                    <td>{{ dado.obs }}</td>
+                    <td>
+                    <form action="{% url 'remover_dado' dado.id %}" method="post" onsubmit="return confirmarRemocao()">
+                        {% csrf_token %}
+                        <button  class="del_button" type="submit"><span class="text">Delete</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path></svg></span></button>
+                        
+                    </form>
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            {% else %}
+                <p>Nenhum resultado encontrado.</p>
+            {% endif %}
+
+        </section>
+        {% endblock %}
+    </main>
+
+
+</body>
+
+</html>

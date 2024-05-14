@@ -1,0 +1,115 @@
+/*style body*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2e2d2d;
+	display: flex;
+    flex-direction: column;	
+	
+    }
+
+header {
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+		display: block;
+		width: 100vw;
+		height: 10vh;
+		background-color: black;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		background-size: cover;
+		-o-background-size: cover;
+        }
+
+nav {
+        display: flex;
+        flex-direction: column;
+        background-color: #444;
+        padding: 10px;
+		height: 100vh;
+        }
+
+nav a {
+		color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+        margin: 0 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        }
+
+nav a:hover {
+        background-color: #555;
+        }
+
+section {
+		color: #fff;
+		background-color: #2e2d2d;
+        padding: 20px;
+        }
+
+	.content {
+			flex: 1; 
+	}
+
+footer {
+        text-align: center;
+        padding: 10px;
+        color: #fff;
+		width: 100%;
+		height: 10vh;
+		position: fixed;
+		left: 0;
+   		bottom: 0;
+		background-color: black;
+		
+    }
+	#login-container {
+		position: fixed;
+		top: 30px;
+		right: 30px;
+		background: #686868;
+		border-radius: 5px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+	#login-container button {
+		font-size: 15px;
+		font-family: Arial;
+		padding: 5px 20px;
+		background: #686868;
+		color: white;
+		border: none;
+		border-radius: 3px;
+		cursor: pointer;
+    }
+	.Sign-up {
+		position: fixed;
+		top: 30px;
+		right: 130px;
+		background: #686868;
+		border-radius: 5px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+	.Sign-up button {
+		font-size: 15px;
+		font-family: Arial;
+		padding: 5px 20px;
+		background: #686868;
+		color: white;
+		border: none;
+		border-radius: 3px;
+		cursor: pointer;
+			
+	}		
+
+	.navlist {
+		display: flex;
+        flex-direction: column;
+        background-color: #444;
+        padding: 10px;	
+	}

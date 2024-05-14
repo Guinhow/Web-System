@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        
+        <link rel="stylesheet" href="{% static 'login/logincss.css' %}">
+        <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    </head>
+
+    <header>
+        <h1>Laboratorio Inc.</h1>
+    </header>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2e2d2d;
+        }
+    </style>
+<div id="login-box">
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ next }}">
+        <div class="user-box">
+            <input type="text" id="username" name="username" required>
+            <label for="username">Username</label>
+        </div>
+    
+        <div class="user-box">
+            <input type="password" id="password" name="password" required>
+            <label for="password">Password</label>
+        </div>	
+        
+        <div class="login-button">
+        <center>
+        <button><a>
+           Login
+        <span></span>
+        </a></button>
+        </center>
+        </div>
+        
+        {% for k, v in form.errors.items %}
+            {{ v }}
+        {% endfor %}    
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+.menu {
+    padding: 10px;
+    font-size: 25px;
+    letter-spacing: 3px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header {
+
+    display: flex;
+    justify-content: space-around;
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(17, 17, 17);
+    height: 100px;
+    width: 100vw;
+
+}
+nav {
+    display: flex;
+    justify-content: space-around;
+    font-family: Arial, Helvetica, sans-serif;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    height: 100vh; 
+    background: rgb(17, 17, 17);
+    width: 21vw; 
+    z-index: 1; 
+    overflow-y: auto; /
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    position: relative;
+    top: 10vh;
+    left: 0;
+    width: 21vw;
+    height: 90vh;
+    background: rgb(17, 17, 17);
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.nav-list li {
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.nav-list li > a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+body {
+    background-color: rgb(124, 121, 121); 
+    width: 100%;
+    height: 100%;
+}
+#bar {
+    width: 30vw;
+}
+#main {
+    min-height: 100vh;
+    background-color: rgb(124, 121, 121);
+    height: 100vh;
+    background-size: cover;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 25vw;
+    padding: 10px;
+
+}
+
+/* estilo do botao enviar */
+
+#data-form {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    align-items: center; 
+    margin: 20px; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#data-form input[type="submit"] {
+    width: 20vw;
+    background-color: rgb(17, 17, 17); 
+    color: white; 
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-left: 75%;
+}
+
+#data-form input[type="submit"]:hover {
+    background-color: #000000; 
+}
+
+/* organização da classificação aprovado ou não em resultados */
+
+.classification-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+/* estilo dos submenus */
+
+.submenu {
+    list-style: none;
+    display: none;
+    position: absolute;
+    top: 100%;
+    padding: 0;
+    z-index: 1;
+}
+
+.submenu li {
+    border-bottom: 1px solid #ccc;
+}
+
+.submenu li:last-child {
+    border-bottom: none;
+}
+
+.submenu li a {
+    display: block;
+    padding: 10px;
+    color: #fdf8f8;
+    text-decoration: none;
+    background-color: #3d3c3c;
+}
+
+.submenu.active {
+    display: block;
+}
+
+/* estilo das rows e cols */
+
+.container {
+    padding: 20px;
+}
+
+fieldset {
+    width: 100%;
+    border: none; 
+}
+
+.row {
+    margin-bottom: 5px; 
+}
+
+label {
+    display: block; 
+    font-weight: bold; 
+    margin-bottom: 5px; 
+}
+
+input, select {
+    width: 100%; 
+    padding: 8px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+}
+#login-container {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	background: #686868;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+#login-container button {
+	font-size: 15px;
+	font-family: Arial;
+	padding: 5px 20px;
+	background: #686868;
+	color: white;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+    }
+
+/* Format table filter */
+table {
+    border-collapse: separate;
+    
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    padding: 8px; 
+    text-align: left; 
+}
+
+.del_button {
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: red;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+    background: #e62222;
+    transform: scale(0.8);
+   }
+   
+   .del_button, .del_button span {
+    transition: 200ms;
+   }
+   
+   .del_button .text {
+    transform: translateX(35px);
+    color: white;
+    font-weight: bold;
+   }
+   
+   .del_button .icon {
+    position: absolute;
+    border-left: 1px solid #c41b1b;
+    transform: translateX(110px);
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+   
+   .del_button svg {
+    width: 15px;
+    fill: #eee;
+   }
+   
+   .del_button:hover {
+    background: #ff3636;
+   }
+   
+   .del_button:hover .text {
+    color: transparent;
+   }
+   
+   .del_button:hover .icon {
+    width: 150px;
+    border-left: none;
+    transform: translateX(0);
+   }
+   
+   .del_button:focus {
+    outline: none;
+   }
+   
+   .del_button:active .icon svg {
+    transform: scale(0.8);
+   }

@@ -1,0 +1,106 @@
+CREATE DATABASE name ;
+
+
+CREATE TABLE name (
+name VARCHAR(xx), 
+name FLOAT ) ;
+
+SELECT * FROM tbname ;
+
+DROP TABLE tbname ;
+
+INSERT INTO tbname (
+dado ,dado ) VALUES (
+'dado', 'dado' ) ;
+
+UPDATE tbname SET dado = 'dado' WHERE dado = 'dado';
+
+DELETE FROM tbname WHERE dado = 'dado' ;
+
+ALTER TABLE tbname ADD PRIMARY KEY (dado);
+
+ALTER TABLE tbname ADD COLUMN (dado DADO);
+
+ALTER TABLE tbname DROP COLUMN dado;
+
+SELECT dado FROM tbname;
+
+SELECT dado AS name FROM tbname;
+
+SELECT * FROM tbname WHERE dado = 'dado';
+
+SELECT * FROM tbname WHERE YEAR(dado) = dado;
+
+SELECT * FROM tbname WHERE dado = 'dado' AND dado = 'dado';
+
+SELECT * FROM tbname WHERE dado = 'dado' OR dado = 'dado';
+
+SELECT * FROM tbname WHERE dado IN ('dado' , 'dado');
+
+SELECT * FROM tbname WHERE dado LIKE '%dado%';
+
+SELECT DISTINCT FROM tabela WHERE dado = dado;
+
+SELECT * FROM tbname WHERE dado = 'dado' LIMIT n,n;
+
+SELECT * FROM tbname ORDER BY dado;   ASC / DESC
+
+SELECT dado, SUM / MAX / MIN / AVG / COUNT (dado) AS dado FROM tbname WHERE dado = 'dado' GROUP BY dado ORDER BY dado;
+
+SELECT dado, SUM / MAX / MIN / AVG / COUNT (dado) AS dado FROM tbname WHERE dado = 'dado' GROUP BY dado HAVING SUM / MAX / MIN / AVG / COUNT (dado) AS dado;
+
+
+SELECT column, 
+CASE 
+WHEN dado = x THEN 
+WHEN dado =<> y AND dado =<> z THEN 'valor' 
+ELSE 'valor' 
+END AS 'dado' 
+FROM tbname;
+
+
+SELECT * FROM tbname A
+INNER JOIN tbname B
+ON A.dado = B.dado;
+
+
+
+SELECT * FROM tbname A
+INNER JOIN tbname B
+ON A.dado = B.dado;
+
+
+SELECT YEAR(data), columnY , sum(column*column) AS alias from tbname A INNER JOIN tbname B on A.columnX = b.columnX WHERE Year(data) = data AND columny =  'dado' GROUP BY Year(data) ;  FATURAMENTO ANUAL POR VENDEDOR EXEMPLO 
+
+
+
+SELECT DISTINCT A.column AS alias, B.column AS alias FROM tbname A LEFT / INNER / RIGHT JOIN tbname B ON A.column = B.column;
+
+
+FULL JOIN = UNION
+
+
+SELECT * FROM tbname
+UNION
+SELECT * FROM tbname;
+
+
+
+SELECT X.column, X.column, X.column, X.column, X.column,
+CASE WHEN (X.column - X.column) < 0 THEN 'INVÁLIDA'
+     ELSE 'VÁLIDA' 
+END AS STATUS_VENDA
+     FROM (
+SELECT B.column, A.column, DATE_FORMAT(B.column, '%Y-%m') AS alias, 
+SUM(C.column) AS alias , 
+MAX(A.column) AS alias FROM tbname B
+INNER JOIN tbname C
+ON B.column = column
+INNER JOIN tbname A 
+ON A.column = B.column
+GROUP BY B.column, A.column, DATE_FORMAT(B.column, '%Y-%m')) X;
+
+
+
+
+

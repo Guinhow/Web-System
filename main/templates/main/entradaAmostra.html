@@ -1,0 +1,100 @@
+{% extends 'main/inicio.html' %}
+
+
+
+
+    <main id="main">
+        {% block content %}
+        <section>
+            <h2>Entrada de Amostras</h2>
+           
+                {% if sucesso_msg %}
+                <script>
+                    alert("{{ sucesso_msg }}");
+                </script>
+                {% endif %}
+
+                {% if erro_msg %}
+                <script>
+                    alert("{{ erro_msg }}");
+                </script>
+                {% endif %}
+
+            <form method="post"> 
+                {% csrf_token %}
+                <div class="container">
+                    <fieldset>
+                        <div class="row">
+                            <section class="col">
+                                <label for="codigo_bq">Codigo BQ</label>
+                                <input type="number" id="codigo_bq" name="codigo_bq">
+                            </section>
+                            <section class="col">
+                                <label for="data_coleta">Data da Coleta</label>
+                                <input type="date" id="data_coleta" name="data_coleta">
+                            </section>
+                            <section class="col">
+                                <label for="data_entrada">Data da entrada</label>
+                                <input type="date" id="data_entrada" name="data_entrada">
+                            </section>
+                        </div>
+                        <div class="row">
+                            <section class="col">
+                                <label for="cliente">Cliente</label>
+                                <input type="text" id="cliente" name="cliente">
+                            </section>
+                            <section class="col">
+                                <label for="codigo_amostra">Código da Amostra</label>
+                                <input type="number" id="codigo_amostra" name="codigo_amostra">
+                            </section>
+                            <section class="col">
+                                <label for="amostra">Amostra</label>
+                                <input type="text" id="amostra" name="amostra">
+                            </section>
+                        </div>
+                        <div class="row">
+                            <section class="col">
+                                <label for="peso">Peso</label>
+                                <input type="number" id="peso" name="peso">
+                            </section>
+                            <section class="col">
+                                <label for="temperatura">Temperatura</label>
+                                <input type="number" id="temperatura" name="temperatura">
+                            </section>
+                            <section class="col">
+                                <label for="classificacao">Classificação</label>
+                                <select id="classificacao" name="classificacao">
+                                    <option selected disabled value="">Selecione</option>
+                                    <option>0001</option>
+                                    <option>0003</option>
+                                    <option>0004</option>
+                                    <option>0005</option>
+                                    <option>0006</option>
+                                    <option>0007</option>
+                                    <option>0008</option>
+                                    <option>0009</option>
+                                    <option>0010</option>
+                                </select>
+                            </section>
+                        </div>
+                        <div class="row">
+                            <section class="col">
+                                <label for="obs">Observação:</label>
+                                <textarea id="obs" name="obs" style="width: 100%;"></textarea>
+                            </section>
+                        </div>
+                    </fieldset>
+                    <div id="data-form">
+                        <input type="submit" value="Enviar">
+                    </div>
+                </div>
+                
+            </form>
+        </section>
+        {% endblock %}
+    </main>
+
+
+</body>
+
+</html>
